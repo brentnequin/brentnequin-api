@@ -1,11 +1,14 @@
-from flask import Flask, render_template
+import os
+
+from flask import Flask
+
 from app.models import db
 from app.views import views
 
-from flask_sqlalchemy import SQLAlchemy
+rootdir = os.getcwd()
 
 app = Flask(__name__)
-app.config.from_pyfile('../config.py')
+app.config.from_pyfile(f'{rootdir}/config.py')
 
 db.init_app(app)
 app.app_context().push()

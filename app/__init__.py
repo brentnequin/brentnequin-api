@@ -8,14 +8,13 @@ from app.api import api
 
 rootdir = os.getcwd()
 
-def create_app():
+def create_app(app_config=None):
 
     app = Flask(__name__)
-    app.config.from_pyfile(f'{rootdir}/config.py')
+    app.config.from_object(app_config or 'config.Config')
 
     db.init_app(app)
     api.init_app(app)
-    app.app_context().push()
 
     app.register_blueprint(views)
 

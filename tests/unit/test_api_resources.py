@@ -22,5 +22,6 @@ def test_post_list_resource(app, post_entry):
 
     with app.app_context():
         post_list_resource = PostListResource()
-        post_list = post_list_resource.get()
-    print(post_list)
+        post = post_list_resource.get()[0]
+
+    assert post['title'] == 'test'

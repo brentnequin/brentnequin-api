@@ -1,12 +1,10 @@
-from flask_marshmallow import Marshmallow
-
 from app.models import Post
 
-ma = Marshmallow()
+from marshmallow_sqlalchemy import SQLAlchemyAutoSchema
 
-class PostSchema(ma.Schema):
+class PostSchema(SQLAlchemyAutoSchema):
     class Meta:
-        fields = ("id", "title", "content")
         model = Post
+        load_instance = True
 
 posts_schema = PostSchema(many=True)

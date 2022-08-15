@@ -19,3 +19,10 @@ def create_app(app_config=None):
     app.register_blueprint(views)
 
     return app
+
+# if __name__ == "__main__":
+
+#     app = create_app()
+#     with app.app_context():
+#         db.create_all()
+#     app.run()

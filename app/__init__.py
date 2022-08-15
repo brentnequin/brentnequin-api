@@ -11,7 +11,7 @@ rootdir = os.getcwd()
 def create_app(app_config=None):
 
     app = Flask(__name__)
-    app.config.from_object(app_config or 'config.Config')
+    app.config.from_object(app_config or 'app.config.Config')
 
     db.init_app(app)
     api.init_app(app)

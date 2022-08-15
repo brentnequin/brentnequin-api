@@ -9,7 +9,7 @@ packages = [
 ]
 
 [tool.poetry.dependencies]
-python = "^3.10"
+python = "3.10.5"
 Flask = "^2.2.2"
 Flask-SQLAlchemy = "^2.5.1"
 Flask-RESTful = "^0.3.9"
@@ -21,7 +21,6 @@ pytest-cov = "^3.0.0"
 pylint = "^2.14.5"
 
 [tool.poetry.scripts]
-dev = "run:run"
 unittests = "tests.unit:run"
 
 [tool.coverage.run]

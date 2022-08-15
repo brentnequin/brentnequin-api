@@ -10,7 +10,7 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 def app():
 
     app = create_app()
-    app.config.from_object("config.TestingConfig")
+    app.config.from_object("app.config.TestingConfig")
 
     with app.app_context():
         db.create_all()

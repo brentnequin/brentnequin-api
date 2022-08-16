@@ -1,2 +1,1 @@
-release: cd app && flask db upgrade
-web: gunicorn app.wsgi:app
+web: flask db upgrade && gunicorn app.wsgi:app

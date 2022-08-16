@@ -8,3 +8,4 @@ class PostSchema(SQLAlchemyAutoSchema):
         load_instance = True
 
 posts_schema = PostSchema(many=True)
+post_schema = PostSchema(many=False)

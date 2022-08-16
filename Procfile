@@ -1,4 +1,4 @@
 init: flask db init --directory app/migrations
-migrate: cd app && flask db migrate
-upgrade: flask db upgrade
+migrate: flask db migrate --directory app/migrations --package app
+upgrade: flask db upgrade --directory app/migrations --package app
 web: gunicorn app.wsgi:app

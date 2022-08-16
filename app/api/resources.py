@@ -1,8 +1,6 @@
 from flask import request
 from flask_restful import Resource
 
-import json
-
 from app import db
 from app.models import Post
 from .schemas import posts_schema, post_schema

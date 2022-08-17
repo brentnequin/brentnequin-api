@@ -1,12 +1,8 @@
-import os
-
 from flask import Flask
 
 from app.models import db, migrate
 from app.views import views
 from app.api import api
-
-rootdir = os.getcwd()
 
 def create_app(app_config=None):
 
@@ -17,6 +13,8 @@ def create_app(app_config=None):
     api.init_app(app)
     migrate.init_app(app, db)
 
+    from app.models import Post, User
+
     app.register_blueprint(views)
 
     return app
@@ -24,6 +22,4 @@ def create_app(app_config=None):
 if __name__ == "__main__":
 
     app = create_app()
-    # with app.app_context():
-    #     db.create_all()
     app.run()

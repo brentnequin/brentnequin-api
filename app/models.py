@@ -11,3 +11,10 @@ class Post(db.Model):
 
     def __repr__(self):
         return '<Post %r>' % self.title
+
+class User(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String, unique=True)
+
+    def __repr__(self):
+        return '<User %r>' % self.title
